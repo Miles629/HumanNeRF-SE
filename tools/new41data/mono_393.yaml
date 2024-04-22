@@ -1,0 +1,13 @@
+dataset:
+  zju_mocap_path: /root/data/zju_mocap
+  subject: '393'
+  sex: 'neutral'
+
+eval_view: 0-0  # camera index, from Camera_B2 to Camera_B23
+min_frames: 0
+max_frames: 658
+skip: 16  # choose image per 30 frame
+
+output:
+  dir: ../../dataset/zju_mocap
+  name: '393_16skip'
