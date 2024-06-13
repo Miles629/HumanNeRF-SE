@@ -1,0 +1,33 @@
+task: 'custom'
+subject: 'mcy'
+experiment: 'adventure'
+
+load_net: latest # the name of saved model when resuming the training
+
+##############################################3
+## Data Configuration
+
+
+train:
+  dataset_module: 'core.data.human_nerf.train'
+  dataset: 'mcy_train'
+
+progress:
+  dataset_module: 'core.data.human_nerf.train'
+  dataset: 'mcy_test'
+
+movement:
+  dataset_module: 'core.data.human_nerf.train'
+  dataset: 'mcy_test'
+
+freeview:
+  dataset_module: 'core.data.human_nerf.freeview'
+  dataset: 'mcy_test'
+
+tpose:
+  dataset_module: 'core.data.human_nerf.tpose'
+  dataset: 'mcy_test'
+
+
+resize_img_scale: 0.5
+dataset_path: '/root/workspace-NerfHuman/CVPRversionAnimateHuman/dataset/custom/mcy1'

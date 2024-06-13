@@ -1,0 +1,36 @@
+task: 'wild'
+subject: 'female_3_casual'
+experiment: 'single_gpu'
+
+load_net: latest # the name of saved model when resuming the training
+
+##############################################3
+## Data Configuration
+
+train:
+  dataset_module: 'core.data.human_nerf.train'
+  dataset: 'f3c_train'
+
+progress:
+  dataset_module: 'core.data.human_nerf.train'
+  dataset: 'f3c_test'
+
+movement:
+  dataset_module: 'core.data.human_nerf.train'
+  dataset: 'f3c_test'
+
+freeview:
+  dataset_module: 'core.data.human_nerf.freeview'
+  dataset: 'f3c_test'
+
+tpose:
+  dataset_module: 'core.data.human_nerf.tpose'
+  dataset: 'f3c_test'
+
+bgcolor: [0., 0., 0.]
+resize_img_scale: 0.5
+# reduce the size of patch from 32x32 to 20x20 to fit in a single gpu
+patch:
+  size: 20      # [Patch] size of patch
+max_frame: 540
+

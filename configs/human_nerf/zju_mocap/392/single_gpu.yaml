@@ -1,0 +1,33 @@
+task: 'zju_mocap'
+subject: 'p392'
+experiment: 'single_gpu'
+
+
+##############################################3
+## Data Configuration
+
+train:
+  dataset_module: 'core.data.human_nerf.train'
+  dataset: 'zju_392_train'
+
+progress:
+  dataset_module: 'core.data.human_nerf.train'
+  dataset: 'zju_392_test'
+
+movement:
+  dataset_module: 'core.data.human_nerf.train'
+  dataset: 'zju_392_test'
+
+freeview:
+  dataset_module: 'core.data.human_nerf.freeview'
+  dataset: 'zju_392_test'
+
+tpose:
+  dataset_module: 'core.data.human_nerf.tpose'
+  dataset: 'zju_392_test'
+
+resize_img_scale: 0.5
+# reduce the size of patch from 32x32 to 20x20 to fit in a single gpu
+patch:
+  size: 20      # [Patch] size of patch
+max_frame: 540
